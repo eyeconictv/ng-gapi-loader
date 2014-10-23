@@ -13,3 +13,4 @@ var unitTestFiles = [
 
 gulp.task("test:unit", factory.testUnitAngular({testFiles: unitTestFiles}));
 gulp.task("test:unit-watch", factory.testUnitAngular({testFiles: unitTestFiles, watch: true}));
+gulp.task("test", ["test:unit"]);

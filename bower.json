@@ -24,8 +24,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": ">=1.2.24",
-    "angular-mocks": ">=1.2.24"
+    "angular": "1.2.24",
+    "angular-mocks": "1.2.24"
   },
   "devDependencies": {
     "q": "1.0.1"

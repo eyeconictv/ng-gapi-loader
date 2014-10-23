@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/Rise-Vision/ng-gapi-loader",
   "dependencies": {
-    "gulp": "~3.8.8"
+    "gulp": "~3.8.8",
+    "run-sequence": "^0.3.6",
+    "widget-tester": "git://github.com/Rise-Vision/widget-tester.git"
   }
 }

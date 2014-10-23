@@ -1,4 +1,4 @@
-# ng-gapi-loader ![Build Status](http://devtools1.risevision.com:8080/job/Ng-Gapi-Loader-Master/badge/icon)
+# ng-gapi-loader [![Build Status](https://travis-ci.org/Rise-Vision/ng-gapi-loader.svg?branch=master)](https://travis-ci.org/Rise-Vision/ng-gapi-loader)
 
 ## Introduction
 
@@ -24,7 +24,7 @@ An AngularJS-based client module that is responsible for making API calls to the
 - TODO: *include and describe all dependencies*
 
 ### Testing
-- TODO: *include how to run unit and e2e testing*
+```npm run test```
 
 ## Submitting Issues
 If you encounter problems or find defects we really want to hear about them. If you could take the time to add them as issues to this Repository it would be most appreciated. When reporting issues please use the following format where applicable:
