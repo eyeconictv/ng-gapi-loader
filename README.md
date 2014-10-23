@@ -12,17 +12,6 @@ An AngularJS-based client module that is responsible for making API calls to the
 - [Karma](https://github.com/karma-runner/karma) and [Protractor](https://github.com/angular/protractor) for testing
 - [Rise Vision Gulp Factory](https://github.com/Rise-Vision/widget-tester.git)
 
-## Development
-
-### Local Development Environment Setup and Installation
-- TODO: *provide exact details on how to setup the local environment for at least Windows, and if doable, Linux and Mac*
-
-### Run Local
-- TODO: *include how to run the application locally if applicable*
-
-### Dependencies
-- TODO: *include and describe all dependencies*
-
 ### Testing
 ```npm run test```
 
