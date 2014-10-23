@@ -1,4 +1,4 @@
-# ng-gapi-loader [![Build Status](https://travis-ci.org/Rise-Vision/ng-gapi-loader.svg?branch=master)](https://travis-ci.org/Rise-Vision/ng-gapi-loader)
+# ng-gapi-loader [![Circle CI](https://circleci.com/gh/Rise-Vision/ng-gapi-loader.png?style=badge)](https://circleci.com/gh/Rise-Vision/ng-gapi-loader)
 
 ## Introduction
 
