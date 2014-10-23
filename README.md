@@ -12,7 +12,37 @@ An AngularJS-based client module that is responsible for making API calls to the
 - [Karma](https://github.com/karma-runner/karma) and [Protractor](https://github.com/angular/protractor) for testing
 - [Rise Vision Gulp Factory](https://github.com/Rise-Vision/widget-tester.git)
 
-### Testing
+## Usage
+
+```js
+angular.module('myapp', ['risevision.common.gapi'])
+   .factory('customGoogleClientLoader', ["gapiLoader", function (gapiLoader) {
+     return gapiClientLoaderGenerator("custom", "v2");
+   }])
+
+   .service('myService', ['customGoogleClientLoader',
+     function(customGoogleClientLoader) {
+       customGoogleClientLoader().then(function (customLib) {
+         //customLib is equivalent to window.gapi.client.custom
+         customLib.somemethod(..., function () { //callback });
+       })
+   }]);
+```
+
+```js
+angular.module('myapp', ['risevision.common.gapi'])
+
+   .service('myService2', ['gapiLoader',
+     function(gapiLoader) {
+       //...
+       gapiLoader().then(function (gApi) {
+         //gApi === window.gapi
+       });
+       //...
+   }]);
+```
+
+## Testing
 ```npm run test```
 
 ## Submitting Issues
