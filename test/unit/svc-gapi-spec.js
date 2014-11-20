@@ -80,7 +80,8 @@ describe("Services: gapi loader", function() {
             discoveryAPILoader().then(function () {
                 expect($window.gapi.client.discovery).to.be.defined;
                 done();
-            }, done);
+            })
+            .then(null,done);
         });
     });
   });
