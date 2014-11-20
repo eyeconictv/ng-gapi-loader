@@ -73,4 +73,17 @@ describe("Services: gapi loader", function() {
     });
   });
 
+  describe("discoveryAPILoader", function () {
+    it("should load", function(done) {
+        inject(function (discoveryAPILoader, $window) {
+            expect(done).be.defined;
+            discoveryAPILoader().then(function () {
+                expect($window.gapi.client.discovery).to.be.defined;
+                done();
+            })
+            .then(null,done);
+        });
+    });
+  });
+
 });

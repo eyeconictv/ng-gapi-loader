@@ -91,4 +91,10 @@ angular.module("risevision.common.gapi", [])
     function (CORE_URL, gapiClientLoaderGenerator, $location) {
     var baseUrl = $location.search().core_api_base_url ? $location.search().core_api_base_url + "/_ah/api": CORE_URL;
     return gapiClientLoaderGenerator("rise", "v0", baseUrl);
+  }])
+
+  .factory("discoveryAPILoader", ["CORE_URL", "gapiClientLoaderGenerator", "$location",
+    function (CORE_URL, gapiClientLoaderGenerator, $location) {
+        var baseUrl = $location.search().core_api_base_url ? $location.search().core_api_base_url + "/_ah/api": CORE_URL;
+        return gapiClientLoaderGenerator("discovery", "v1", baseUrl);
   }]);
