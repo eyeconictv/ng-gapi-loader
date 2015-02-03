@@ -8,6 +8,7 @@ describe("Services: gapi loader", function() {
     //stub services
     $provide.service("$q", function() {return Q;});
     $provide.value("CORE_URL", "");
+    $provide.value("MONITORING_SERVICE_URL", "");
     window.gapiSrc = "test/gapi-mock.js";
   }));
 
@@ -85,5 +86,17 @@ describe("Services: gapi loader", function() {
         });
     });
   });
+
+    describe("monitoringAPILoader", function () {
+        it("should load", function(done) {
+            inject(function (monitoringAPILoader, $window) {
+                expect(done).be.defined;
+                monitoringAPILoader().then(function () {
+                    expect($window.gapi.client.monitoring).to.be.defined;
+                    done();
+                }, done);
+            });
+        });
+    });
 
 });
