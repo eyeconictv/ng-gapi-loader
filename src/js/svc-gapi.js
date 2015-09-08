@@ -15,6 +15,15 @@ var handleClientJSLoad = function() {
 angular.module("risevision.common.gapi", [])
   .factory("gapiLoader", ["$q", "$window", function ($q, $window) {
     var deferred = $q.defer();
+    
+    var _addScript = function(src) {
+      var fileref = document.createElement("script");
+      fileref.setAttribute("type","text/javascript");
+      fileref.setAttribute("src", src);
+      if (typeof fileref!=="undefined") {
+        document.getElementsByTagName("body")[0].appendChild(fileref);
+      }
+    }
 
     return function () {
       var gapiLoaded;
@@ -26,13 +35,9 @@ angular.module("risevision.common.gapi", [])
       else if(!$window.gapiLoadingStatus) {
         $window.gapiLoadingStatus = "loading";
 
-        var src = $window.gapiSrc || "//apis.google.com/js/client.js?onload=handleClientJSLoad";
-        var fileref = document.createElement("script");
-        fileref.setAttribute("type","text/javascript");
-        fileref.setAttribute("src", src);
-        if (typeof fileref!=="undefined") {
-          document.getElementsByTagName("body")[0].appendChild(fileref);
-        }
+        var src = $window.gapiSrc || "//apis.google.com/js/platform.js?onload=handleClientJSLoad";
+        _addScript(src);
+        _addScript("//apis.google.com/js/client.js?onload=handleClientJSLoad");
 
         gapiLoaded = function () {
           deferred.resolve($window.gapi);
@@ -72,6 +77,64 @@ angular.module("risevision.common.gapi", [])
         });
         return deferred.promise;
       };
+    };
+  }])
+  
+  .factory("gapiPlatformLoaderGenerator", ["$q", "gapiLoader", "$log",
+    function ($q, gapiLoader, $log) {
+    return function (libName) {
+      var deferred = $q.defer();
+      gapiLoader().then(function (gApi) {
+        if(gApi[libName]){
+          //already loaded. return right away
+          deferred.resolve(gApi[libName]);
+        }
+        else {
+          gApi.load(libName, function () {
+            if (gApi[libName]) {
+              $log.debug(libName + " Loaded");
+              
+              deferred.resolve(gApi[libName]);
+            } else {
+              var errMsg = libName + " Load Failed";
+              $log.error(errMsg);
+              deferred.reject(errMsg);
+            }
+          });
+        }
+      });
+      return deferred.promise;
+    };
+  }])
+
+  .factory("auth2APILoader", ["gapiPlatformLoaderGenerator", "$q", "$location",
+    function(gapiPlatformLoaderGenerator, $q, $location) {
+      var _auth2;
+      
+      return function(opts) {
+        var deferred = $q.defer();
+        
+        if(_auth2) {
+          deferred.resolve(_auth2);
+        }
+        else {
+          gapiPlatformLoaderGenerator("auth2")
+            .then(function(auth2) {
+              _auth2 = auth2;
+              
+              auth2.init(opts);
+              
+              return auth2.getAuthInstance().then();
+            })
+            .then(function() {
+              deferred.resolve(_auth2);
+            })
+            .then(null, function(e) {
+              deferred.reject(e);
+            });
+        }
+        
+      return deferred.promise;
     };
   }])
 
