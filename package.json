@@ -1,6 +1,6 @@
 {
   "name": "ng-gapi-loader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AngularJS module with helper methods that load Google Client library & custom API's",
   "main": "index.js",
   "scripts": {
