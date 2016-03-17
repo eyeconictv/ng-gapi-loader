@@ -9,6 +9,7 @@ describe("Services: gapi loader", function() {
     $provide.service("$q", function() {return Q;});
     $provide.value("CORE_URL", "");
     $provide.value("MONITORING_SERVICE_URL", "");
+    $provide.value("STORAGE_ENDPOINT_URL", "")
     window.gapiSrc = "test/gapi-mock.js";
   }));
 
@@ -76,12 +77,24 @@ describe("Services: gapi loader", function() {
     });
   });
 
-  describe("done", function () {
+  describe("riseAPILoader", function () {
     it("should load", function(done) {
       inject(function (riseAPILoader, $window) {
         expect(done).be.defined;
         riseAPILoader().then(function () {
           expect($window.gapi.client.rise).to.be.defined;
+          done();
+        }, done);
+      });
+    });
+  });
+  
+  describe("storageAPILoader", function () {
+    it("should load", function(done) {
+      inject(function (storageAPILoader, $window) {
+        expect(done).be.defined;
+        storageAPILoader().then(function () {
+          expect($window.gapi.client.storage).to.be.defined;
           done();
         }, done);
       });

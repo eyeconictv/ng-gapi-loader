@@ -162,6 +162,13 @@ angular.module("risevision.common.gapi", [])
     return gapiClientLoaderGenerator("store", "v0.01", baseUrl);
   }])
 
+  .factory('storageAPILoader', ['STORAGE_ENDPOINT_URL', 'gapiClientLoaderGenerator', '$location',
+    function (STORAGE_ENDPOINT_URL, gapiClientLoaderGenerator, $location) {
+      var baseUrl = $location.search().storage_api_base_url ? $location.search().storage_api_base_url + '/_ah/api' : STORAGE_ENDPOINT_URL;
+      return gapiClientLoaderGenerator('storage', 'v0.01', baseUrl);
+    }
+  ])
+  
   .factory("discoveryAPILoader", ["CORE_URL", "gapiClientLoaderGenerator", "$location",
     function (CORE_URL, gapiClientLoaderGenerator, $location) {
         var baseUrl = $location.search().core_api_base_url ? $location.search().core_api_base_url + "/_ah/api": CORE_URL;
