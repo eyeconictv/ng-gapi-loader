@@ -7,9 +7,4 @@ window.gapi.client = {
   }
 };
 
-window.gapi.load = function(path, cb) {
-  window.gapi[path] = {};
-  cb();
-};
-
 window.handleClientJSLoad();
