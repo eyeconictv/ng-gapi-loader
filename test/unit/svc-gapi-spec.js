@@ -38,20 +38,6 @@ describe("Services: gapi loader", function() {
       });
     });
   });
-  
-  describe("gapiPlatformLoaderGenerator", function () {
-
-    it("should load a gapi platform lib", function (done) {
-      inject(function (gapiPlatformLoaderGenerator, $window) {
-        expect(gapiPlatformLoaderGenerator).be.defined;
-        gapiPlatformLoaderGenerator("auth2").then(function () {
-          expect($window.gapi).to.be.defined;
-          expect($window.gapi.auth2).to.be.defined;
-          done();
-        }, done);
-      });
-    });
-  });
 
   describe("oauth2APILoader", function () {
     it("should load", function(done) {
