@@ -1,3 +1,6 @@
+## DEPRECATED
+Use: https://github.com/Rise-Vision/common-header/tree/master/src/js/components/gapi-loader
+
 # ng-gapi-loader [![Circle CI](https://circleci.com/gh/Rise-Vision/ng-gapi-loader.png?style=badge)](https://circleci.com/gh/Rise-Vision/ng-gapi-loader)
 
 ## Introduction
