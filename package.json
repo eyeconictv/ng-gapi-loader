@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rise-Vision/ng-gapi-loader"
+    "url": "https://github.com/porcupine-plan/ng-gapi-loader"
   },
   "keywords": [
     "gapi",
@@ -19,12 +19,12 @@
   "author": "Xiyang Chen <settinghead@gmail.com>",
   "license": "GNU GPL",
   "bugs": {
-    "url": "https://github.com/Rise-Vision/ng-gapi-loader/issues"
+    "url": "https://github.com/porcupine-plan/ng-gapi-loader/issues"
   },
-  "homepage": "https://github.com/Rise-Vision/ng-gapi-loader",
+  "homepage": "https://github.com/porcupine-plan/ng-gapi-loader",
   "dependencies": {
     "gulp": "~3.8.8",
     "run-sequence": "^0.3.6",
-    "widget-tester": "git://github.com/Rise-Vision/widget-tester.git"
+    "widget-tester": "git://github.com/porcupine-plan/widget-tester.git"
   }
 }
