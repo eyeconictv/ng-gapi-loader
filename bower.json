@@ -14,7 +14,7 @@
     "Xiyang Chen <settinghead@gmail.com>"
   ],
   "license": "GNU GPL",
-  "homepage": "https://github.com/porcupine-plan/ng-gapi-loader",
+  "homepage": "https://github.com/eyeconictv/ng-gapi-loader",
   "private": true,
   "ignore": [
     "**/.*",

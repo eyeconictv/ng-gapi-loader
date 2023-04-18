@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/porcupine-plan/ng-gapi-loader"
+    "url": "https://github.com/eyeconictv/ng-gapi-loader"
   },
   "keywords": [
     "gapi",
@@ -25,6 +25,6 @@
   "dependencies": {
     "gulp": "~3.8.8",
     "run-sequence": "^0.3.6",
-    "widget-tester": "git://github.com/porcupine-plan/widget-tester.git"
+    "widget-tester": "git://github.com/eyeconictv/widget-tester.git"
   }
 }
