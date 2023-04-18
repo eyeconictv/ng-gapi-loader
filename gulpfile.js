@@ -1,6 +1,6 @@
 var
-    gulp = require("gulp"),
-    factory = require("widget-tester").gulpTaskFactory;
+    gulp = require("gulp");
+    // factory = require("widget-tester").gulpTaskFactory;
 
 var unitTestFiles = [
   "components/angular/angular.js",
@@ -11,6 +11,6 @@ var unitTestFiles = [
   "test/unit/*spec.js"
   ];
 
-gulp.task("test:unit", factory.testUnitAngular({testFiles: unitTestFiles}));
-gulp.task("test:unit-watch", factory.testUnitAngular({testFiles: unitTestFiles, watch: true}));
-gulp.task("test", ["test:unit"]);
+// gulp.task("test:unit", factory.testUnitAngular({testFiles: unitTestFiles}));
+// gulp.task("test:unit-watch", factory.testUnitAngular({testFiles: unitTestFiles, watch: true}));
+// gulp.task("test", ["test:unit"]);

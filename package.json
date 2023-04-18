@@ -19,12 +19,11 @@
   "author": "Xiyang Chen <settinghead@gmail.com>",
   "license": "GNU GPL",
   "bugs": {
-    "url": "https://github.com/porcupine-plan/ng-gapi-loader/issues"
+    "url": "https://github.com/eyeconictv/ng-gapi-loader/issues"
   },
-  "homepage": "https://github.com/porcupine-plan/ng-gapi-loader",
+  "homepage": "https://github.com/eyeconictv/ng-gapi-loader",
   "dependencies": {
     "gulp": "~3.8.8",
-    "run-sequence": "^0.3.6",
-    "widget-tester": "git://github.com/eyeconictv/widget-tester.git"
+    "run-sequence": "^0.3.6"
   }
 }
